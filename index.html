@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('./time.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #ffffff;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <h1>Time</h1>
+    <h3 id="dateId"> </h3>
+    <h3 id="timeId"></h3>
+    <h3 id="yearId"></h3>
+    <script type="text/javascript">
+        // var nowDay = new Date();
+        var getyear, getmonth, getdate, gethour, getminute, getsecond, getday;
+        
+        setInterval(function() {
+            new Date();
+        getyear = new Date().getFullYear();
+        getmonth = (new Date().getMonth());
+        getdate = (new Date().getDate());
+        gethour = (new Date().getHours());
+        getminute = (new Date().getMinutes());
+        getsecond = (new Date().getSeconds());
+        getday = (new Date().getDay())
+        
+        switch (getday) {
+            case 0: 
+                var getdayFormat = 'Sunday';
+                break;
+            case 1: 
+                var getdayFormat = 'Monday';
+                break;
+            case 2: 
+                var getdayFormat = 'Tuesday';
+                break;
+            case 3: 
+                var getdayFormat = 'Wesneday';
+                break;
+            case 4: 
+                var getdayFormat = 'Thusday';
+                break;
+            case 5: 
+                var getdayFormat = 'Friday';
+                break;
+            default: 
+                var getdayFormat = 'Saturday';
+                break;
+      
+        }
+        console.log(getdayFormat);
+        if (getmonth < 10) { var getmonthFormat = '0'+ ++getmonth} else {getmonthFormat = ++getmonth}
+        if (getdate < 10) { var getdateFormat = '0'+getdate} else {getdateFormat = getdate}
+        if (gethour < 10) { var gethourFormat = '0'+gethour} else {gethourFormat = gethour}
+        if (getminute < 10) { var getminuteFormat = '0'+getminute} else {getminuteFormat = getminute}
+
+        if (getsecond < 10) {var getsecondFormat = '0'+getsecond} else {getsecondFormat = getsecond}
+        var content = gethourFormat +' : ' + getminuteFormat + ' : ' +getsecondFormat;
+        var yearcontent = getdateFormat + ' / ' + getmonthFormat + ' / ' + getyear;
+
+        document.getElementById('dateId').innerHTML = 'Today is '+ getdayFormat;
+        document.getElementById('timeId').innerHTML = content;
+
+        document.getElementById('yearId').innerHTML = yearcontent;
+
+        },1000)    
+
+
+        
+
+
+    </script>
+
+</body>
+</html>
