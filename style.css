@@ -1,0 +1,11 @@
+
+body {
+    background-image: url('./time.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ddd;
+    font-size: larger;
+}
+h1{
+    font-family: 'Oswald', sans-serif;
+}
